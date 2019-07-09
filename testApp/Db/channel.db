@@ -1,0 +1,69 @@
+record(ai, "$(P):CH$(CHANNEL)_RD") {
+    field(DESC, "getCH$(CHANNEL)TEM, channel: $(CHANNEL)")
+    field(PINI, YES)
+    field(DTYP, "stream")
+    field(INP,  "@test.proto getCHxTEM($(CHANNEL)) dev1")
+}
+
+record(ai, "$(P):CH$(CHANNEL)SEN_RD") {
+    field(DESC, "getCH$(CHANNEL)SEN, channel: $(CHANNEL)")
+    field(PINI, YES)
+    field(DTYP, "stream")
+    field(INP,  "@test.proto getCHxSEN($(CHANNEL)) dev1")
+}
+
+record(stringin, "$(P):CH$(CHANNEL)NAM_RD") {
+    field(DESC, "getCH$(CHANNEL)NAM, channel: $(CHANNEL)")
+    field(PINI, YES)
+    field(DTYP, "stream")
+    field(INP,  "@test.proto getCHxNAM($(CHANNEL)) dev1")
+}
+
+record(ai, "$(P):CH$(CHANNEL)HI_RD") {
+    field(DESC, "getCH$(CHANNEL)HI, channel: $(CHANNEL)")
+    field(PINI, YES)
+    field(DTYP, "stream")
+    field(INP,  "@test.proto getCHxHI($(CHANNEL)) dev1")
+}
+
+record(ai, "$(P):CH$(CHANNEL)LO_RD") {
+    field(DESC, "getCH$(CHANNEL)NAM, channel: $(CHANNEL)")
+    field(PINI, YES)
+    field(DTYP, "stream")
+    field(INP,  "@test.proto getCHxLO($(CHANNEL)) dev1")
+}
+
+record(stringin, "$(P):CH$(CHANNEL)UNITS_RD") {
+    field(DESC, "getCH$(CHANNEL)UNITS, channel: $(CHANNEL)")
+    field(PINI, YES)
+    field(DTYP, "stream")
+    field(INP,  "@test.proto getCHxUNITS($(CHANNEL)) dev1")
+}
+
+record(stringout, "$(P):CH$(CHANNEL)NAM_CSET") {
+    field(DESC, "setCH$(CHANNEL)NAM, channel: $(CHANNEL)")
+    field(DTYP, "stream")
+    field(OUT,  "@test.proto setCHxNAM($(CHANNEL)) dev1")
+    field(FLNK, "getCHxNAM.PROC PP")
+}
+
+record(ao, "$(P):CH$(CHANNEL)HI_CSET") {
+    field(DESC, "setCH$(CHANNEL)HI, channel: $(CHANNEL)")
+    field(DTYP, "stream")
+    field(OUT,  "@test.proto setCHxHI($(CHANNEL)) dev1")
+    field(FLNK, "getCHxHI.PROC PP")
+}
+
+record(ao, "$(P):CH$(CHANNEL)LO_CSET") {
+    field(DESC, "setCH$(CHANNEL)LO, channel: $(CHANNEL)")
+    field(DTYP, "stream")
+    field(OUT,  "@test.proto setCHxLO($(CHANNEL)) dev1")
+    field(FLNK, "getCHxLO.PROC PP")
+}
+
+record(stringout, "$(P):CH$(CHANNEL)UNITS_CSET") {
+    field(DESC, "setCH$(CHANNEL)UNITS, channel: $(CHANNEL)")
+    field(DTYP, "stream")
+    field(OUT,  "@test.proto setCHxUNITS($(CHANNEL)) dev1")
+    field(FLNK, "getCHxUNITS.PROC PP")
+}

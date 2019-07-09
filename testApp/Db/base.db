@@ -1,0 +1,24 @@
+record(stringin, "getID") {
+    field(DESC, "getID")
+    field(PINI, YES)
+    field(DTYP, "stream")
+    field(INP,  "@test.proto getID dev1")
+}
+
+record(stringin, "getMODEL") {
+    field(DESC, "get the model name")
+}
+
+record(stringin, "getSERIAL") {
+    field(DESC, "get the serial number")
+}
+
+record(stringin, "getFIRMWARE") {
+    field(DESC, "get the firmware version")
+}
+
+record(ao, "systBEEP") {
+    field(DESC, "syst:beep")
+    field(DTYP, "stream")
+    field(OUT,  "@test.proto systBEEP dev1")
+}
