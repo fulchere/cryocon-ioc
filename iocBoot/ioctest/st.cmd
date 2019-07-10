@@ -20,16 +20,17 @@ drvAsynIPPortConfigure("dev1","192.168.1.4:5000", 0, 0, 0)
 #asynSetTraceIOMask("dev1",-1,255)
 
 ## Load record instances
-dbLoadRecords("../../db/base.db")
-dbLoadRecords("../../db/channel.db","CHANNEL=a")
-dbLoadRecords("../../db/channel.db","CHANNEL=b")
-dbLoadRecords("../../db/channel.db","CHANNEL=c")
-dbLoadRecords("../../db/channel.db","CHANNEL=d")
-dbLoadRecords("../../db/channel.db","CHANNEL=e")
-dbLoadRecords("../../db/channel.db","CHANNEL=f")
-dbLoadRecords("../../db/channel.db","CHANNEL=g")
-dbLoadRecords("../../db/channel.db","CHANNEL=h")
+dbLoadRecords("../../db/base.db","P=LS1_CB04")
+dbLoadRecords("../../db/cryocon.db","P=LS1_CB04")
+#dbLoadRecords("../../db/base.db","P=LS1_CB04,CHANNEL=b")
+#dbLoadRecords("../../db/channel.db","P=LS1_CB04,CHANNEL=c")
+#dbLoadRecords("../../db/channel.db","P=LS1_CB04,CHANNEL=d")
+#dbLoadRecords("../../db/channel.db","P=LS1_CB04,CHANNEL=e")
+#dbLoadRecords("../../db/channel.db","P=LS1_CB04,CHANNEL=f")
+#dbLoadRecords("../../db/channel.db","P=LS1_CB04,CHANNEL=g")
+#dbLoadRecords("../../db/channel.db","P=LS1_CB04,CHANNEL=h")
 dbLoadRecords("$(EPICS_BASE)/db/asynRecord.db","P=,R=asyn,PORT=dev1,ADDR=0,OMAX=40,IMAX=40")
+
 
 iocInit()
 

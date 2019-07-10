@@ -5,7 +5,7 @@ ReplyTimeout = 25000;
 getID {
 
     out "*IDN?";
-    in "Cryo-con,Model %(getMODEL.VAL)/[^,]*/,%(getSERIAL.VAL)/[^,]*/,%(getFIRMWARE.VAL)s";
+    in "Cryo-con,Model %(\$1:MODEL_RD.VAL)/[^,]*/,%(\$1:SERIAL_RD.VAL)/[^,]*/,%(\$1:FIRMWARE_RD.VAL)s";
 }
 
 getCHxTEM {

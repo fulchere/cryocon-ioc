@@ -1,13 +1,9 @@
-global {p=\$(P)}
+global { P=\$(P) }
 
 file "channel.template" {
-{ P, CHANNEL }
-{ "\$(P), "A" }
-{ "\$(P), "B" }
-{ "\$(P), "C" }
-{ "\$(P), "D" }
-{ "\$(P), "E" }
-{ "\$(P), "F" }
-{ "\$(P), "G" }
-{ "\$(P), "H" }
+    pattern
+    { P, CHANNEL }  
+    { "\$(P)", "a" }
+    { "\$(P)", "b" }
+
 }

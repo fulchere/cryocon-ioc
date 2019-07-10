@@ -3,12 +3,14 @@ record(ai, "$(P):CH$(CHANNEL)_RD") {
     field(PINI, YES)
     field(DTYP, "stream")
     field(INP,  "@test.proto getCHxTEM($(CHANNEL)) dev1")
+    field(SCAN, ".1 second")
 }
 
 record(ai, "$(P):CH$(CHANNEL)SEN_RD") {
     field(DESC, "getCH$(CHANNEL)SEN, channel: $(CHANNEL)")
     field(PINI, YES)
     field(DTYP, "stream")
+    field(SCAN, ".1 second")
     field(INP,  "@test.proto getCHxSEN($(CHANNEL)) dev1")
 }
 
@@ -16,6 +18,7 @@ record(stringin, "$(P):CH$(CHANNEL)NAM_RD") {
     field(DESC, "getCH$(CHANNEL)NAM, channel: $(CHANNEL)")
     field(PINI, YES)
     field(DTYP, "stream")
+    field(SCAN, "1 second")
     field(INP,  "@test.proto getCHxNAM($(CHANNEL)) dev1")
 }
 
@@ -23,6 +26,7 @@ record(ai, "$(P):CH$(CHANNEL)HI_RD") {
     field(DESC, "getCH$(CHANNEL)HI, channel: $(CHANNEL)")
     field(PINI, YES)
     field(DTYP, "stream")
+    field(SCAN, "1 second")
     field(INP,  "@test.proto getCHxHI($(CHANNEL)) dev1")
 }
 
@@ -30,6 +34,7 @@ record(ai, "$(P):CH$(CHANNEL)LO_RD") {
     field(DESC, "getCH$(CHANNEL)NAM, channel: $(CHANNEL)")
     field(PINI, YES)
     field(DTYP, "stream")
+    field(SCAN, "1 second")
     field(INP,  "@test.proto getCHxLO($(CHANNEL)) dev1")
 }
 
@@ -37,6 +42,7 @@ record(stringin, "$(P):CH$(CHANNEL)UNITS_RD") {
     field(DESC, "getCH$(CHANNEL)UNITS, channel: $(CHANNEL)")
     field(PINI, YES)
     field(DTYP, "stream")
+    field(SCAN, "1 second")
     field(INP,  "@test.proto getCHxUNITS($(CHANNEL)) dev1")
 }
 
